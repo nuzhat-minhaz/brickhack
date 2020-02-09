@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device=width, initial scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+
+    <title> DISCO! </title>
+    <style>
+
+        body{
+            background-color: #4a0059;
+            color: white;
+        }
+
+        h1{
+            font-family: Poppins;
+            font-weight: 600;
+            font-size:1.5em;
+            padding:0;
+            margin: 0;
+            color:rgb(255, 255, 255);
+            margin-right: 70%;
+        }
+
+        h2{
+            font-family: Poppins;
+            font-weight: 600;
+            font-size:1.9em;
+            line-height: 1.1;
+            padding:5px;
+            margin: 0;
+            color:rgb(136, 0, 148)
+
+        }
+        h3{
+            font-family: Poppins;
+            font-weight: 400;
+            font-size:0.8em;
+            line-height: 1.4;
+            padding:10px;
+            padding-top:0;
+            padding-right:30px;
+            margin: 0;
+            color:rgb(56, 56, 56)  
+        }
+
+        h4{
+            font-family: Poppins;
+            font-weight: 400;
+            font-size:0.9em;
+            line-height: 1.2;
+            padding:5px;
+            padding-top:0;
+            margin: 0;
+            color:rgb(0, 0, 0)  
+        }
+
+    
+        .grid-container {
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+        grid-template-areas: 
+        'side1 header side2'
+        'side1 body1 side2'
+        'side1 footer side2';
+        }
+
+        .headerpanel{
+            background-color: rgb(0, 0, 0);
+            border-radius: 10px;
+            width:100%;
+            height: 90px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-top:5px;
+            margin: 0px;
+            margin-top: 20px;
+        }
+        .textbox{
+            padding:20px;
+            padding-right: 30px;
+        }
+
+        .side1{
+            grid-area: side2;
+            background-color: #4a0059;
+            padding: 0px;
+            margin:0px;
+        }
+        .side2{
+            grid-area: side2;
+            background-color: #4a0059;
+            padding: 0px;
+            margin:0px;
+        }
+        
+
+        .header{
+            text-align: left;
+            grid-area: header;
+            font-family: Poppins;
+            font-weight: 300;
+            background-color: #4a0059;
+            font-size: 1.2em;
+            
+        }
+        
+
+        .body-grid-container{
+            display: grid;
+            grid-template-columns: 70% 30%;
+            grid-template-areas: 
+            'bodytopPanel bodytopPanel'
+            'text1 leftpanel'
+            'textentry leftpanel'
+            'outputinfo outputinfo';
+        }
+
+        .body1{
+            grid-area: body1;
+            background-color: white;
+            color: rgb(170, 170, 170);
+            margin:0px;
+            padding: 0px;
+            line-height: 1.3;
+            text-align: left;
+            font-size: 1.4em;
+            font-weight: 300;
+            font-family: Poppins;
+        }
+
+        .text1{
+            grid-area: text1;
+            border-radius: 8px;
+            border: solid 2px rgb(190, 190, 190);
+            background-color: white;
+            padding: 10px;
+            padding-top:15px;
+            padding-bottom: 15px;
+            margin: 20px;
+            color: rgb(165, 165, 165);
+            font-size: 0.9em;
+            line-height:1.1;
+            text-align: left;
+            font-family: Poppins;
+            font-weight: 600;
+        }
+
+        .textentry{
+            grid-area: textentry;
+            border-radius: 8px;
+            background-color: white;
+            color: black;
+            font-size: 0.8em;
+            line-height: 1.1;
+            border: solid 2px rgb(190, 190, 190);
+            padding: 10px;
+            margin: 20px;
+            margin-top:10px;
+            font-family: poppins;
+            font-weight: 600;
+        }
+
+        .leftpanel{
+            grid-area: leftpanel;
+            background-color: white;
+        }
+
+        .outputinfo{
+            grid-area: outputinfo;
+            border-radius: 8px;
+            background-color: white;
+            border: solid 2px rgb(190, 190, 190);
+            padding: 10px;
+            margin: 20px;
+            margin-top:10px;
+
+        }
+        
+        .bodytopPanel{
+            grid-area: bodytopPanel;
+            background-color: #4a0059;
+            color: white;
+            font-weight: 600px;
+            font-family: Poppins;
+            width:100%;
+            height: 70px;
+            margin: 0px;
+        }
+
+        #rectangle2{
+            background-color: rgb(167, 0, 174);
+            padding: 0;
+            margin:0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height:70px;
+            width:100%;
+
+        }
+        
+        .footer{
+            grid-area: footer;
+            font-family: Poppins;
+            font-weight: 400;
+            background-color:rgb(153, 0, 153);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            width: 100%;
+            height: 50px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 5px;
+            padding-top:0px;
+            margin: 0px;
+        }
+    
+        img{
+            object-fit: contain;
+            border: none;
+            outline: none;
+            margin: 0;
+            width: 100%;
+        }
+
+        #img2{
+            object-fit: contain;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            padding-right: 10px;
+            padding-left: 0px;
+            padding-top: 4px;
+        }
+        
+
+        #img1{
+            object-fit: contain;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            width: 50%;
+            padding-top: 5px;
+        }
+
+        #img3{
+            object-fit: contain;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            margin-top:3px;
+            padding-right: 5px;
+            margin-left: 20px;
+        }
+        #img4{
+            object-fit: contain;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            width: 13%;
+            margin-top:3px;
+            padding-right: 5px;
+            margin-left: 20px;
+        }
+
+        #button-opinion{
+            padding:5px;
+            line-height: 1.1;
+            outline: none;
+            border: none;
+            background: none;
+            background-color: rgb(255, 115, 97);
+            color: rgb(255, 255, 255);
+            font-size: 1.3em;
+            margin: 0;
+            margin-top: 4px;
+            border-radius: 5px;
+            margin-right: 0;
+            margin-left: 270px;
+        }
+
+        .input-text{
+            outline: none;
+            border: none;
+            margin-left: 20px;
+            margin-right: 20;
+            border-left: 2px solid rgb(255, 0, 106);
+            
+            margin-top: 10px;
+            font-size: 1.2em;
+            padding: 5px;
+            color: rgb(110, 110, 110);
+            font-family: poppins;
+            font-weight: 300;
+        }
+
+        #rectangle{
+            width: 95%;
+            height: 60px;
+            margin-left: 5px;
+            background:rgb(255, 255, 255);
+            border: 2px solid purple;
+            border-radius: 5px;
+        }
+        /*BUTTTTOOOOOONS!!! */
+
+        .container {
+            position: relative;
+            width: 20%;
+            max-width: 100px;
+            margin-right: 0;
+            margin-left: 0;
+            padding:0;
+            }
+
+            .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            }
+
+            .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .3s ease;
+            background-color: rgb(255, 255, 255);
+            }
+
+            .container:hover .overlay {
+            opacity: 0.7;
+            }
+
+            .fa-user:hover {
+            color: #eee;
+            }
+
+            #image01{
+                width: 30%;
+                padding-top: 160px;
+                padding-left: 400px;
+                
+            }
+            .show{display:block;}
+.hide{display:none;}
+#demo{
+    padding-left: 400px;
+    line-height: 1.1;
+    font-size: 1.1em;
+    color: rgb(86, 0, 88);
+    margin: 0;
+    text-align: left;
+}
+  
+    </style>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="side1">
+            
+        </div>
+        <div class="header">
+            <div class="headerpanel">
+                <img src="logo2.png" id="img3"> 
+            </div>
+            <div class="textbox">
+            On this page, you can see the topic in detail, and how people who have seen it are responding to it.
+            For anyone to input agree/disagree/neither, you'll have to type in the thought behind your choice first.
+            You can choose to join a conversation regarding this topic if you feel comfortable interacting with others 
+            directly about your opinion! If you think this story is fake, you can challenge the source and upload materials.
+        </div>
+        </div>
+        <div class="side2">
+
+        </div>
+        <div class="body1">
+            <div class="body-grid-container">
+                <div class="bodytopPanel">
+                    <div id="rectangle2"> 
+                        <img src="TOPIC.png" id="img4">
+                    </div>
+                </div>
+                <div class="text1">
+                    &nbsp; February 7th 2020 | TRENDING STORIES
+                    <h2>New York State bans Juul <br>and vape products</h2>
+                    <h3>After hospitals and state universities report 
+                        a concerning number of <br>vape/Juul related injuries or health conditions, 
+                        the state bans the product.</h3>
+                        &nbsp; 29 people have viewed this
+                </div>
+                <div class="textentry">
+                    current vibe: 
+                    <br>
+                    <img src="vibe.png" id="img1">
+                    <h4>agree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    disagree
+
+                </h4>
+                    <p>your thoughts & opinions:</p>
+                    
+
+                    <div id="rectangle"> 
+                        <input type="text" id="myText" value="I think..." class="input-text">
+                        
+<button onclick="typeWriter(), showImg()" id="button-opinion">enter</button> <img id="image01" src="loading.svg" class="hide">
+        
+                        <!--
+                        <button onclick="myFunction()" id="button-opinion">enter</button>
+-->
+                        <p id="demo"></p>
+                        
+                        <script>
+                            /*
+                        function myFunction() {
+                        var x = document.getElementById("myText").value;
+                        document.getElementById("demo").innerHTML = x;
+                        }
+                        */
+          
+                        var e = 0;
+                        var i = 0;
+                        var txt = "Loading data based on your input...";
+                        var speed = 70;
+
+                        function showImg()
+                                {
+                                var obj=document.getElementById('image01');
+                                obj.className = 'show';
+                                }
+
+                        function typeWriter() {
+                        if (i < txt.length) {
+                            document.getElementById("demo").innerHTML += txt.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, speed);
+                            
+                        }
+
+                        }
+
+                        </script>
+
+                    </div>
+                        <p>do you agree or disagree with this decision, or neither?</p>
+                        <div class="container">
+                            <img src="agr.png" class="image">
+                            <div class="overlay">
+                            <a href="#" title="User Profile">
+                              <i class="fa fa-user"></i>
+                            </a>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="container">
+                            <img src="nei.png" class="image">
+                            <div class="overlay">
+                            <a href="#" title="User Profile">
+                              <i class="fa fa-user"></i>
+                            </a>
+                            </div>
+                          </div>
+                          <br>
+                          <div class="container">
+                            <img src="dis.png" class="image">
+                            <div class="overlay">
+                            <a href="#" title="User Profile">
+                              <i class="fa fa-user"></i>
+                            </a>
+                            </div>
+                          </div>
+
+                </div>
+
+
+
+                <div class="leftpanel">
+                    <img src="leftpanel.png" id="img2">
+                    </div>
+                </div>
+                <div class="outputinfo">
+    
+        
+                    <img src="panel.png" id="img2">
+                </div>
+                
+            </div>
+            <div class="footer">
+
+            </div>
+
+            
+        </div>
+    </div>
+
+    </body>
+    </html>
